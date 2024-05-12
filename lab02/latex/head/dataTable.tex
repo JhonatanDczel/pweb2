@@ -1,0 +1,149 @@
+
+	
+	\vspace*{10pt}
+	
+	\begin{center}	
+		\fontsize{17}{17} \textbf{ Informe de Laboratorio \itemPracticeNumber}
+	\end{center}
+	\centerline{\textbf{\Large Tema: \itemTheme}}
+	\vspace*{0.5cm}	
+
+	\begin{flushright}
+		\begin{tabular}{|M{2.5cm}|N|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Nota}  \\
+			\hline 
+			     \\[30pt]
+			\hline 			
+		\end{tabular}
+	\end{flushright}	
+
+	\begin{table}[H]
+		\begin{tabular}{|x{4.9cm}|x{4.3cm}|x{5.1cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white} \textbf{Estudiante} & \color{white}\textbf{Escuela}  & \color{white}\textbf{Asignatura}   \\
+			\hline 
+			{\itemStudent \par \itemEmail} & \itemSchool & {\itemCourse \par Semestre: \itemSemester \par Código: \itemCourseCode}     \\
+			\hline 			
+		\end{tabular}
+	\end{table}		
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Laboratorio} & \color{white}\textbf{Tema}  & \color{white}\textbf{Duración}   \\
+			\hline 
+			\itemPracticeNumber & \itemTheme & 04 horas   \\
+			\hline 
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\begin{tabular}{|x{4.7cm}|x{4.8cm}|x{4.8cm}|}
+			\hline 
+			\rowcolor{tablebackground}
+			\color{white}\textbf{Semestre académico} & \color{white}\textbf{Fecha de inicio}  & \color{white}\textbf{Fecha de entrega}   \\
+			\hline 
+			\itemAcademic & \itemInput &  \itemOutput  \\
+			\hline 
+		\end{tabular}
+	\end{table}
+
+
+\section{Actividades}
+Elabore un informe individual, de estudio de Git y GitHub.
+
+Cree su página personal con las recomendaciones dadas por la W3C en su tutorial de CSS: Empezando con HTML y CSS: \url{https://www.w3.org/Style/Examples/011/firstcss.en.html}.
+
+\begin{itemize}
+    \item \textbf{index.html} - (Menú principal - Página principal de bienvenida al sitio beb)
+    
+    \item \textbf{autor.html} - (Menú principal - Página de presentación del autor) (Se activa Menú Izquierdo)
+    
+    \item \textbf{hobbies.html} - (Menú Izquierdo - Página de fotos y descripciones de sus hobbies.)
+    
+    \item \textbf{ingSoftware.html} - (Menú Izquierdo - Página donde explique ¿Qué es la Ing. de Software desde su punto de vista?. Descripción, especialidades que resalte.)
+    
+    \item \textbf{galeria.html} - (Menú Izquierdo - Página de fotos y descripciones libres que quiera compartir.)
+    
+    \item \textbf{estandaresWeb.html} - (Menú principal - Página donde describa la W3C y algunos estándares web.)
+    
+    \item \textbf{contactame.html} - (Menú principal - Página donde muestra un formulario de contacto.)
+\end{itemize}
+
+\textbf{Menú Principal:} |Inicio|Autor|Estándares Web|Contáctame|
+
+\begin{itemize}
+    \item \textbf{Inicio:} Página de presentación del sitio. "Bienvenido a ...".
+    
+    \item \textbf{Autor:} Descripción del autor. "Mi nombre es ...".
+    
+    \item \textbf{Estándares Web:} SVG, WOFF, WebRTC, XML.
+    
+    \item \textbf{Contáctame:} Formulario: |nombres:input| |correo:email| |genero:radiobutton| |nacimiento:date| |asunto:input| |contenido:textarea| |enviar:button|
+\end{itemize}
+
+\textbf{Menú Izquierdo:} |Autor| -> |Hobbies|Ing. de Software|Galería|
+
+\begin{itemize}
+    \item \textbf{Hobbies:} Descripción, tiempo, recomendaciones, fotos.
+    
+    \item \textbf{Ing. de Software:} Acerca de la carrera de Ing. de Software. Futuro. Especialidad.
+    
+    \item \textbf{Galería:} Fotos en barrio, universidad, trabajo u otras actividades, mascota.
+\end{itemize}
+
+\textbf{Contactanos:} Formulario que guarda en una base de datos. Las consutas que se desean enviar. Nombres, correo electrónico, asunto, detalle.
+
+Utilice todas las recomendaciones dadas por el docente:
+
+\begin{itemize}
+    \item \textbf{Antecedentes:} Describir antecedentes previos que sean necesarios para desarrollar el laboratorio. (Las entregadas por el docente y/o las que se buscaron personalmente).
+    
+    \item \textbf{No usar JavaScript.} Sólo HTML y CSS.
+    
+    \item \textbf{Commits:} Elaborar la lista de envíos que permitiran culminar el laboratorio. (Previo a la implementación)
+    
+    \item \textbf{Source:} Explicar porciones de código fuente importantes, trascendentales que permitieron resolver el laboratorio y que reflejen su particularidad única. (Sólo en trabajos grupales se permite duplicidad)
+    
+    \item \textbf{Ejecución:} Muestra comandos, capturas de pantalla, explicando la forma de replicar y ejecutar el entregable del laboratorio.
+\end{itemize}
+
+\textbf{Validación:} Muestra validación HTML y CSS.
+
+Utilice DockerFile para realizar operaciones automatizadas en Docker (incluido arrancar el servidor web a través de un puerto y copiar el proyecto web para acceder desde la máquina anfitrión.)
+
+Ejemplo: \url{http://127.0.0.1:8085/lab02/}
+
+\textbf{M.Sc. Ing. Richart Smith Escobedo Quispe Pág. 13 Programación Web}
+
+\textbf{Universidad Nacional de San Agustín de Arequipa}
+
+\textbf{Facultad de Ingeniería de Producción y Servicios}
+
+\textbf{Departamento de Ingeniería de Sistemas e Informática}
+
+\textbf{Escuela Profesional de Ingeniería de Sistemas}
+
+\textbf{Programación Web}
+		
+	\section{Equipos, materiales y temas utilizados}
+	\begin{itemize}
+		\item Sistema Operativo ArchCraft GNU Linux 64 bits Kernell
+		\item NeoVim
+		\item OpenJDK 64-Bit 20.0.1 
+		\item Git 2.42.0
+		\item Cuenta en GitHub con el correo institucional.
+		\item Programación Orientada a Objetos.
+    \item Java Swing with JFrame
+	\end{itemize}
+	\section{URL de Repositorio Github}
+	\begin{itemize}
+            \item URL del Repositorio GitHub para clonar o recuperar.
+            \item \url{https://github.com/JhonatanDczel/fp2-23b.git}
+            \item URL para el laboratorio \itemPracticeNumber{} en el Repositorio GitHub.
+            \item \itemUrl
+	\end{itemize}
