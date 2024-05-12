@@ -1,10 +1,11 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;700;800&display=swap");
 :root {
-  font-family: "Manrope", sans-serif; }
+  font-family: "Manrope", sans-serif;
+}
 
 html {
-  min-height: 100svh; }
+  min-height: 100svh;
+}
 
 body {
   min-height: 100svh;
@@ -13,27 +14,33 @@ body {
   align-items: center;
   justify-content: center;
   padding: 25px 6vw;
-  background-size: cover; }
+  background-size: cover;
+}
 
-nav, main {
-  padding: 0 9vw; }
+nav,
+main {
+  padding: 0 9vw;
+}
 
 a {
-  color: #000; }
+  color: #000;
+}
 
 .max-container {
   min-height: calc(100svh - 50px);
   width: 100%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+}
 
 button {
   border: none;
   font-size: 1rem;
   font-weight: 550;
-  padding: .7rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   border-radius: 1rem;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
 nav {
   background-color: #fff6;
@@ -45,74 +52,118 @@ nav {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: min(3vw, 30px) 9vw; }
-  nav .logo {
-    font-size: 2rem;
-    font-weight: 900; }
-  nav .links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2vw; }
-    nav .links ul {
-      list-style: none;
-      display: flex;
-      gap: 3vw;
-      flex-wrap: wrap;
-      justify-content: space-evenly; }
-      nav .links ul a {
-        color: #000;
-        font-weight: 700; }
-      nav .links ul a:hover {
-        text-decoration: underline;
-        color: #666;
-        transform: scale(1.9); }
-    nav .links a[id="github"] {
-      color: #000;
-      font-weight: 700;
-      display: flex;
-      background-color: #fff;
-      border-radius: 50px;
-      align-items: center;
-      gap: 8px;
-      padding: .5rem .7rem; }
-    nav .links a[id="github"]:hover {
-      cursor: pointer;
-      transform: scale(1.03); }
+  padding: min(3vw, 30px) 9vw;
+}
+nav .logo {
+  font-size: 2rem;
+  font-weight: 900;
+}
+nav .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2vw;
+}
+.links ul {
+  list-style: none;
+  display: flex;
+  gap: 3vw;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.links ul a {
+  color: #000;
+  font-weight: 700;
+}
+.links ul a:hover {
+  text-decoration: underline;
+  color: #666;
+}
+.menu-izquierdo ul a:hover{
+  color: #ccc;
+}
+nav .links a[id="github"] {
+  color: #000;
+  font-weight: 700;
+  display: flex;
+  background-color: #fff;
+  border-radius: 50px;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 0.7rem;
+}
+nav .links a[id="github"]:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
 
 p {
-  text-align: justify; }
+  text-align: justify;
+}
 
 main {
   flex: 1;
   display: flex;
   justify-content: center;
   background-color: #fff6;
-  border-radius: 0 0 10px 10px; }
-  main .presentation-container {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    align-content: space-evenly;
-    justify-content: space-evenly;
-    flex-wrap: wrap-reverse; }
-    main .presentation-container img {
-      height: 300px; }
-    main .presentation-container .presentation {
-      max-width: 600px;
-      min-height: 300px; }
-      main .presentation-container .presentation h1 {
-        font-size: 1.6rem;
-        font-weight: 500; }
-      main .presentation-container .presentation h2 {
-        font-size: 2.1rem;
-        font-weight: 900; }
-      main .presentation-container .presentation p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem; }
-      main .presentation-container .presentation button {
-        background-color: #000; }
-        main .presentation-container .presentation button a {
-          color: #fff; }
+  border-radius: 0 0 10px 10px;
+}
+main .presentation-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  flex-wrap: wrap-reverse;
+}
+main .presentation-container img {
+  height: 300px;
+}
+main .presentation-container .presentation {
+  max-width: 600px;
+  min-height: 300px;
+}
+main .presentation-container .presentation h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+main .presentation-container .presentation h2 {
+  font-size: 2.1rem;
+  font-weight: 900;
+}
+main .presentation-container .presentation p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+main .presentation-container .presentation button {
+  background-color: #000;
+}
+main .presentation-container .presentation button a {
+  color: #fff;
+}
 
+.menu-izquierdo {
+  max-width: 150px;
+}
+.menu-izquierdo > ul {
+  margin-top: 25px;
+  gap: 1rem;
+  justify-content: start;
+}
+.menu-izquierdo > p{
+  font-weight: 900;
+}
+
+.menu-izquierdo > ul > li > a {
+  color: #fff;
+}
+.menu-izquierdo > ul > li{
+  background-color: #666;
+  border-radius: 50px;
+  min-width: 110px;
+  align-items: center;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  justify-content: center;
+}

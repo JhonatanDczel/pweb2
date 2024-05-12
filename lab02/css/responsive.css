@@ -1,0 +1,31 @@
+@media screen and (max-width: 850px) {
+  nav {
+    justify-content: space-evenly;
+  }
+}
+@media screen and (max-width: 460px) {
+  html {
+    font-size: 14px;
+  }
+  nav > .links > button {
+    display: none;
+  }
+  main > .presentation-container > img {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .project-card {
+    width: 70vw;
+  }
+  .project-image {
+    height: calc(0.72 * 70vw);
+  }
+
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
