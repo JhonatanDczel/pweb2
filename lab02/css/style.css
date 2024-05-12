@@ -167,3 +167,40 @@ main .presentation-container .presentation button a {
   display: flex;
   justify-content: center;
 }
+
+#contactame {
+  background-color: #f8f9fa; /* Cambia esto al color de fondo que estés usando */
+  color: #212529; /* Cambia esto al color de texto que estés usando */
+  font-family: Arial, sans-serif; /* Cambia esto a la fuente que estés usando */
+  padding: 20px;
+}
+
+#contactame h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#contactame form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contactame label {
+  margin-bottom: 10px;
+}
+
+#contactame input, #contactame textarea {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+}
+
+#contactame input[type="submit"] {
+  cursor: pointer;
+  background-color: #007bff; /* Cambia esto al color de los botones que estés usando */
+  color: white; /* Cambia esto al color de texto de los botones que estés usando */
+  border: none;
+  padding: 10px 20px;
+}
