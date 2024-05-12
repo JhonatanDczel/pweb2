@@ -1,7 +1,95 @@
-\newpage % o \clearpage
-\section{Proyecto lab02}
+\subsection{Página Personal}
+
+La página personal que se desarrollará en el laboratorio 02 sigue los estándares web actuales e incluye las siguientes secciones:
+
 \begin{itemize}
-  \item Creamos un directorio que contenga los archivos del laboratorio.
-  \item La estructura del laboratorio presente es:
+    \item \textbf{Autor}
+    \item \textbf{Contáctame}
+    \item \textbf{Estándares web}
+    \item \textbf{Inicio}
+    \item \textbf{Galería}
 \end{itemize}
-\includegraphics[width=0.35\textwidth]{img/tree.jpg}
+
+\subsubsection{Mejoras propuestas:}
+
+\begin{itemize}
+    \item \textbf{Autor:} Agregar una breve biografía del autor, destacando su experiencia, habilidades y proyectos relevantes.
+    \item \textbf{Contáctame:} Implementar un formulario de contacto para facilitar la comunicación con los visitantes.
+    \item \textbf{Estándares web:} Ofrecer información sobre los estándares web utilizados en el desarrollo de la página, promoviendo prácticas de codificación eficientes y accesibles.
+    \item \textbf{Inicio:} Brindar una introducción atractiva y concisa sobre el propósito de la página personal, invitando a los usuarios a explorar su contenido.
+    \item \textbf{Galería:} Enlazar la sección de galería con una colección visualmente atractiva de proyectos destacados del autor.
+\end{itemize}
+
+\subsubsection{Responsive Design:}
+
+El archivo \texttt{responsive.css} contiene reglas de estilo que garantizan que la página se adapte correctamente a diferentes tamaños de pantalla. Destacan las siguientes características:
+
+\begin{verbatim}
+@media screen and (max-width: 850px) {
+  nav {
+    justify-content: space-evenly;
+  }
+}
+\end{verbatim}
+
+\begin{verbatim}
+@media screen and (max-width: 460px) {
+  html {
+    font-size: 14px;
+  }
+  nav > .links > button {
+    display: none;
+  }
+  main > .presentation-container > img {
+    height: 250px;
+  }
+}
+\end{verbatim}
+
+\begin{verbatim}
+@media screen and (max-width: 610px) {
+  .project-card {
+    width: 70vw;
+  }
+  .project-image {
+    height: calc(0.72 * 70vw);
+  }
+
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+\end{verbatim}
+
+\subsubsection{Mejoras sugeridas:}
+
+\begin{itemize}
+    \item \textbf{Optimización de imágenes:} Implementar técnicas de compresión de imágenes para reducir el tiempo de carga en dispositivos móviles y mejorar la experiencia del usuario.
+    \item \textbf{Pruebas exhaustivas:} Realizar pruebas en una variedad de dispositivos y navegadores para garantizar que la página se vea y funcione correctamente en diferentes entornos.
+\end{itemize}
+
+\subsubsection{Galería:}
+
+La estructura de la galería hace uso de tecnologías como Grid y Flexbox para maquetar la presentación de proyectos de manera eficiente. Destacan las siguientes características:
+
+\begin{verbatim}
+.presentation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+\end{verbatim}
+
+\begin{verbatim}
+.projects-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  align-items: start;
+  justify-items: center;
+  grid-row-gap: 4rem;
+  grid-column-gap: 2rem;
+}
+\end{verbatim}
