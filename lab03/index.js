@@ -37,14 +37,24 @@ camp.style.border = "1px solid black";
 camp.style.backgroundColor = "#eee";
 camp.style.display = "flex";
 camp.style.alignContent = "center";
-
+camp.style.overflow = "hidden";
 let keyboard = document.createElement("div");
 
-for (let i = 0; i < 11; i++) {
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+let numbers = Array.from({ length: 10 }, (_, i) => i); 
+numbers = shuffle(numbers); 
+
+for (let i = 0; i <= 10; i++) {
   let key = document.createElement("button");
-  let name = i;
+  let name = i < 10 ? numbers[i] : "Limpiar"; 
   if (i == 10) {
-    name = "Limpiar";
     key.style.gridColumn = "span 2";
   }
   key.textContent = name;
@@ -60,15 +70,14 @@ for (let i = 0; i < 11; i++) {
   key.style.fontSize = "1.5rem";
 }
 
+
 mainDiv.appendChild(keyboard);
 
-// Aquí van los estilos
 document.documentElement.style.margin = 0;
 document.documentElement.style.padding = 0;
 document.body.style.margin = 0;
 document.body.style.padding = 0;
 
-// Aplicar estilos a main
 document.body.style.height = "calc(100vh - 70px)";
 main.style.width = "100vw";
 main.style.height = "calc(100vh - 70px)";
