@@ -1,0 +1,89 @@
+commit d0f5f6037b4106293e00ef80a22b8e2dd08c4ede
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat May 11 23:46:29 2024 -0500
+
+    Informe
+
+commit 0684c3effbd042e97e12c055be5f9cf7ec963be9
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat May 11 23:33:10 2024 -0500
+
+    Copia de formato para el informe de latex
+
+commit bbd0dd99b0ff598146313f3e7b74a33f4ca352c2
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat May 11 23:20:08 2024 -0500
+
+    Modificaciones menores
+
+commit 27c90facf01a858314edfaf41407941782017eb0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat May 11 23:15:42 2024 -0500
+
+    Estandares web y contactame
+
+commit f37a061b89939f20d7b4571259385c827b5f2228
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat May 11 22:56:31 2024 -0500
+
+    Menu izquierdo
+
+commit fd085732353d6f3ce09d1e5d7643ef87a73b498d
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat May 11 21:41:26 2024 -0500
+
+    Organiza los archivos y sube el lab 01
+
+commit 18dc775421ba3afba0806e2e9bb076333a7cb533
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Sat May 11 21:34:27 2024 -0500
+
+    Archivos necesarios para la galeria
+
+commit 16c999b0a7c9ea75f88eb2acc00f389880773cae
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:53:03 2024 -0500
+
+    Sube algunas imagenes
+
+commit c946e729e4817153849607965c22b193b35c59e0
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:31:16 2024 -0500
+
+    normalize y template para la galeria
+
+commit 65a5d9160b36db7f0b5c7f16e3d26c46fc1f537f
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:19:53 2024 -0500
+
+    Seccion autor solo presentacion
+
+commit f6b1fb89d164670ac85b37335ca86a243bd04220
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:16:04 2024 -0500
+
+    Agregados en los estilos principales
+
+commit fa1aeca96631432ea60de7d60f1947fdd25fbe39
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:13:34 2024 -0500
+
+    Enlaces funcionales
+
+commit 5f6ddbfbbb7f5dfce7070999ab3f833f8f2cb9a7
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:11:51 2024 -0500
+
+    Estilos primarios a la web - menu principal
+
+commit 8b8a1f83bcf752b945e0c7bce57db40e69308bb4
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:10:07 2024 -0500
+
+    Pagina index html lista
+
+commit 049538b1c36acfd6007037be0d01ed440acef542
+Author: JhonatanDczel <jariasq@unsa.edu.pe>
+Date:   Fri May 10 09:05:59 2024 -0500
+
+    touch de todos los archivos necesarios
