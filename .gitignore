@@ -3,5 +3,7 @@
 *.out
 *.gz
 .DS_Store
+__pycache__
+*_env
 
 node_modules
