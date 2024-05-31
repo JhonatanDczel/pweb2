@@ -1,6 +1,6 @@
 import pygame, sys
 from pygame.locals import *
-from colors import *
+from .colors import *
 
 
 def parseLine(DISPLAY, y, s):
@@ -17,8 +17,8 @@ def draw(picture):
     img = picture
   pygame.init()
 
-  DISPLAY = pygame.display.set_mode((640, 480))
-  DISPLAY.fill(BLUE)
+  DISPLAY = pygame.display.set_mode((480, 480))
+  DISPLAY.fill(BACKGROUND)
 
   n = len(img)
   for i in range(0, n):

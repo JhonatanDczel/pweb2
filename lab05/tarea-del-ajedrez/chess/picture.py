@@ -1,4 +1,5 @@
-from colors import *
+from .colors import *
+from .pieces import *
 
 
 class Picture:
@@ -27,7 +28,10 @@ class Picture:
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
-    return Picture(None)
+    new_img = []
+    for string in self.img:
+      new_string = [self._invColor(letter) for letter in string]
+    return Picture(new_img)
 
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento 
@@ -55,3 +59,31 @@ class Picture:
     """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
     o antihorario"""
     return Picture(None)
+
+  @staticmethod
+  def rock():
+    return Picture(ROCK)
+
+  @staticmethod
+  def king():
+    return Picture(KING)
+
+  @staticmethod
+  def bishop():
+    return Picture(BISHOP)
+
+  @staticmethod
+  def square():
+    return Picture(SQUARE)
+
+  @staticmethod
+  def knight():
+    return Picture(KNIGHT)
+
+  @staticmethod
+  def pawn():
+    return Picture(PAWN)
+
+  @staticmethod
+  def queen():
+    return Picture(QUEEN)
