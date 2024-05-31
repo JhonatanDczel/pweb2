@@ -1,0 +1,108 @@
+\section{El programa Carrito de Compras}
+\subsection{La clase ProductStock}
+Por el momento solo contiene los 3 campos name, value y quatity, además de su correspondiente constructor y los métodos setters y getters.
+
+\begin{minted}[bgcolor=background]{python}
+class ProductStock:
+  def __init__(self, name, value, quantity):
+    self._name = name
+    self._value = value
+    self._quantity = quantity
+\end{minted}
+
+\subsection{La clase StockProducts}
+Contiene un campo que almacena los productos en stock. Por lo tanto puede ser una lista de objetos ProductStock, sin embargo, podemos especificar un id para cada tipo de producto, una forma de identificarlo unicamente y que con id directamente podamos acceder a la informacion del producto como es el nombre, costo y cantidad.
+
+\subsubsection{Qué estructura usar}
+Los diccionario en Python nos facilitaria acceder directamente a la informacion del producto sin la necesidad de tener que iterar por cada objeto ProductStock y comparar su campo name como se tendria que hacer si la estructura sería una simple lista de objetos ProductStock.
+
+\begin{minted}[bgcolor=background]{python}
+class StockProducts:
+  def __init__(self):
+    self._products = {}
+\end{minted}
+
+\subsubsection{El método \mpy{add_product()}}
+Se encargará de agregar un nuevo producto al diccionario, donde la clave es el nombre del producto, asi ingresar a la información del producto es más eficiente.
+
+\begin{minted}[bgcolor=background]{python}
+def add_product(self, product):
+  self._products[product.name] = product
+  print("Producto agregado en stock exitosamente...")
+\end{minted}
+
+\subsubsection{El método \mpy{get_product()}}
+Se encargará de obtener el producto según el nombre que reciba como argumento, aqui podemos observar la funcionalidad del diccionario, ya que solo necesitamos pasar el argumento como clave para buscar en el diccionario en vez de tener que iterar por cada objeto en caso de una lista. Claro esta que son estructuras de datos y su concepto no involucra saber cómo esta implementado por dentro.
+
+\begin{minted}[bgcolor=background]{python}
+def get_product(self, name):
+  return self._products.get(name)
+\end{minted}
+
+Como vemos, solo consta en usar la función \mpy{get()} en lugar de acceder nativamente al valor del diccionario. Si nosotros usamos esta forma, entonces si en futuras verificaciones como es en el caso de la clase \textbf{ShoppingCart} puede arrojar un error al no encontrar dicha clave.
+
+\subsubsection{El método \mpy{delete_products()}}
+Este método es usado en el método \mpy{finalize_purchase()} de la clase \textbf{ShoppingCart}. Se encarga de reducir la cantidad de unidades disponibles de cada producto que esta en stock.
+
+\begin{minted}[bgcolor=background]{python}
+def delete_products(self, name, cuantity):
+  if self._products[name].cuantity >= cuantity:
+    self._products[name].cuantity -= cuantity 
+    print("Producto eliminado exitosamente...")
+  else:
+    print("Producto no encontrado...")
+\end{minted}
+
+\subsection{La clase ShoppingCart}
+Al igual que la clase StockProducts usamos el concepto de \textbf{Asociación}, pues se tendrá una referencia una instancia de StockProducts, lo cual nos permite saber la informacion de la lista de productos en stock, claro está que es un diccionario.
+
+\subsubsection{Almacenar los productos y la cantidad de unidades en el carrito de compras}
+Para poder conectar con los productos en stock rápidamente podemos pensar que esta estructura tambien debe de ser un diccionario donde la clave es el nombre del producto y el valor es la cantidad de unidades puestas en el carrito de compras
+
+\begin{minted}[bgcolor=background]{python}
+class ShoppingCart:
+  def __init__(self, stock):
+    self._stock = stock   # Productos en stock
+    self._item = {}   # Productos en el carrito
+\end{minted}
+
+\subsubsection{El método \mpy{add_item()}}
+Como vemos, este método debe de recibir 2 argumentos, que son el nombre del producto y la cantidad de unidades a comprar. Entonces la lógica en este método se divide en 2 partes:
+
+\begin{itemize}
+  \item Verificar si el producto está en el campo que referencia a una instancia de StockProducts y verificar tambien si la cantidad a comprar es menor o igual que la cantidad disponible.
+  \item Verificar que si el el producto ya está en el carrito de compras solo aumentar la cantidad de unidades, de lo contrario agregar el producto al carrito de compras con su correspondiente cantidades de unidades iniciales.
+\end{itemize}
+
+\begin{minted}[bgcolor=background]{python}
+def add_item(self, name, quantity):
+  if self._stock.get_product(name) and quantity <= self._stock.get_product(name).quantity:
+    if self._item.get(name):
+      self._item[name] += quantity
+    else:
+      self._item[name] = quantity
+  else:
+    print("Producto no disponible...\n")
+\end{minted}
+
+\subsubsection{El método \mpy{finalize_purchase()}}
+Este método debe confirmar la compra modificando la referencia a StockProducts justamente la cantidad disponible de cada producto. Recordemos que podemos no confirmar y entonces la cantidad disponible para los otros usuarios no cambiará.
+
+\begin{minted}[bgcolor=background]{python}
+def finalize_purchase(self):
+  for key in self._item:
+    self._stock.delete_products(key, self._item[key])
+  self._item = {}
+  print("Compra finalizada...\n")
+\end{minted}
+
+\subsubsection{El método \mpy{calculate_total()}}
+Usando la clave de los diccionarios, podemos acceder al costo del producto y en la referencia a StockProducts y acceder a la cantidad comprada en el campo que se encargará de almacenar los productos agregados al carrito de compras. Sumamos esta multiplicación y ese sería el resultado final.
+
+\begin{minted}[bgcolor=background]{python}
+def calculate_total(self):
+  total = 0
+  for key in self._item:
+    total += self._stock.get_product(key).value * self._item[key]
+  return total
+\end{minted}

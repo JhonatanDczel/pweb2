@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Jhossep Fabritzio",
+    "telefono": "923485748",
+    "direccion": "Arequipa",
+    "relacion": "UNSA"
+  },
+  {
+    "nombre": "Jorge Luis",
+    "telefono": "999953535",
+    "direccion": "Arequipa - Yura",
+    "relacion": "UNSA"
+  },
+  {
+    "nombre": "Jhonatan David",
+    "telefono": "989348992",
+    "direccion": "Arequipa",
+    "relacion": "UNSA"
+  }
+]

@@ -1,0 +1,62 @@
+\subsection{Método \texttt{updateContact}}
+\subsubsection{Definición del Método}
+\begin{minted}
+\begin{minted}[language=python]
+def updateContact(self, newContact):
+    for idx, saved in enumerate(self._contacts):
+        if saved.nombre == newContact.nombre:
+            self._contacts[idx] = newContact
+            print("El contacto se actualizó exitosamente...\n")
+            return
+    print("No se encontró el contacto a actualizar...\n")
+\end{minted}
+\end{minted}
+
+\subsubsection{Descripción del Funcionamiento}
+\begin{itemize}
+    \item \textbf{Propósito:}
+    Actualizar un contacto existente en la lista \texttt{\_contacts}.
+    \item \textbf{Parámetros:}
+    \texttt{newContact}: Un objeto de contacto que contiene la nueva información que se desea actualizar.
+    \item \textbf{Flujo de Control:}
+    \begin{itemize}
+        \item \textbf{Iteración:} El método recorre la lista \texttt{\_contacts} usando \texttt{enumerate} para obtener tanto el índice como el objeto de contacto actual.
+        \item \textbf{Comparación:} Dentro del bucle, compara el nombre (\texttt{nombre}) del contacto guardado (\texttt{saved}) con el nombre del nuevo contacto (\texttt{newContact}).
+        \item \textbf{Actualización:} Si encuentra una coincidencia, reemplaza el contacto existente en la lista con el nuevo contacto (\texttt{newContact}).
+        \item \textbf{Salida:} Imprime un mensaje de éxito y sale del método con \texttt{return} para evitar iteraciones innecesarias.
+        \item \textbf{No Encontrado:} Si no se encuentra una coincidencia tras iterar toda la lista, imprime un mensaje indicando que no se encontró el contacto.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Método \texttt{deleteContact}}
+\subsubsection{Definición del Método}
+\begin{minted}
+\begin{minted}[language=python]
+def deleteContact(self, pattern):
+    for contact in self._contacts:
+        name = contact.nombre
+        isName = self._match(name.lower(), pattern.lower())
+        if isName:
+            self._contacts.remove(contact)
+            print("El contacto se eliminó exitosamente...\n")
+            return
+    print("No se encontró el contacto a eliminar...\n")
+\end{minted}
+\end{minted}
+
+\subsubsection{Descripción del Funcionamiento}
+\begin{itemize}
+    \item \textbf{Propósito:}
+    Eliminar un contacto de la lista \texttt{\_contacts} que coincida con un patrón dado.
+    \item \textbf{Parámetros:}
+    \texttt{pattern}: Un patrón de texto que se usará para buscar coincidencias en los nombres de los contactos.
+    \item \textbf{Flujo de Control:}
+    \begin{itemize}
+        \item \textbf{Iteración:} El método recorre la lista \texttt{\_contacts}.
+        \item \textbf{Comparación:} Convierte los nombres de los contactos y el patrón a minúsculas para una comparación insensible a mayúsculas/minúsculas.
+        \item \textbf{Coincidencia:} Utiliza un método auxiliar \texttt{\_match} para verificar si el nombre coincide con el patrón.
+        \item \textbf{Eliminación:} Si encuentra una coincidencia, elimina el contacto de la lista \texttt{\_contacts}.
+        \item \textbf{Salida:} Imprime un mensaje de éxito y sale del método con \texttt{return}.
+        \item \textbf{No Encontrado:} Si no se encuentra una coincidencia tras iterar toda la lista, imprime un mensaje indicando que no se encontró el contacto.
+    \end{itemize}
+\end{itemize}
