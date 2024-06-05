@@ -51,19 +51,12 @@ class Picture:
     l = max(len(self.img), len(p.img))
 
     for i in range(l):
-      izquierda = self.img[i]
-      derecha = p.img[i]
-      if izquierda is None:
-        izquierda = [" " for i in range(len(self.img[0]))]
-      if derecha is None:
-        derecha = [" " for i in range(len(p.img[0]))]
-      row = izquierda + derecha
+      izquierda = self.img[i] if i < len(self.img) else []
+      derecha = p.img[i] if i < len(p.img) else []
+      row = ''.join(izquierda) + ''.join(derecha)
       new_img.append(row)
 
     return Picture(new_img)
-
-  """ Devuelve una nueva figura poniendo la figura actual
-      sobre la figura p """
 
   def up(self, p):
     new_img = self.img + p.img
@@ -98,10 +91,9 @@ class Picture:
     rotada = [list(fila)[::-1] for fila in transpuesta]
 
     return Picture(rotada)
-  
+
   def rotate_antihorario(self):
     return self.rotate_horario().rotate_horario().rotate_horario()
-    
 
   @staticmethod
   def rock():
