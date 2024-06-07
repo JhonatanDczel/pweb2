@@ -288,3 +288,77 @@ Y podemos inyectar fragmentos de html con:
 <p>Algun contenido</p>
 {% endblock content %}
 ```
+
+## Formularios
+
+Los formularios se pueden manejar en Django gracias al modulo forms.
+
+Para esto se crean clases que seran nuestros objetos formulario: 
+
+```python
+from django import forms
+
+class CreateNewTask(forms.Form):
+  title = forms.CharField(label="TItulo de tarea",
+                         max_length=200,
+                         required=True)
+  description = forms.CharField(widget=forms.Textarea, label="Descripcion de tarea", required=True)
+```
+
+Esto se le pasa como variable a una template, y se usa de la siguiente manera: 
+
+```html
+{% extends 'base.html' %} {% block content %}
+
+<h1>Create a new task</h1>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button>save</button>
+</form>
+
+{% endblock %}
+```
+
+Note que se esta usando la etiqueta `{% csrf_token %}` de Jinja, esto es para asegurarnos de que la información que llegará al servidor está siendo enviada desde un formulario propio de nosotros.
+
+Podemos acceder a los datos de la query string de la siguiente manera: 
+
+```python
+def create_task(request):
+  if(request.method == 'GET'):
+    return render(request, 'create_task.html', {'form' : CreateNewTask() })
+  Task.objects.create(title=request.POST['title'], description=request.POST['description'], project_id=1)
+  return redirect('/tasks')
+```
+## URL names
+
+En la funcion path de `urls.py` podemos pasar un 3er parametro que hace referencia al nombre del recurso, esto nos sirve para manejar las direcciones url de forma independiente sin que cause conflicto el cambio de alguna: 
+
+```python
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('hello/<str:username>', views.hello, name='hello'),
+    path('projects/', views.projects, name='projects'),
+    path('tasks/', views.tasks, name='tasks'),
+    path('about/', views.about, name='about'),
+    path('create_task/', views.create_task, name='create_task'),
+    path('create_project/', views.create_project, name='create_project'),
+]
+```
+
+Luego, en los html templates podemos usar el siguiente tag: 
+
+```html
+  <ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'tasks' %}">Tasks</a></li>
+    <li><a href="{% url 'projects' %}">Projects</a></li>
+    <li><a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'create_project' %}">Create Project</a></li>
+    <li><a href="{% url 'create_task' %}">Create Task</a></li>
+  </ul>
+```
+
+## Static Files
+
