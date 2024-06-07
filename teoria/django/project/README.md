@@ -185,4 +185,17 @@ Esto devolverá el dato contenido en la tabla correspondiente
 
 ## Params
 
+Los params los usamos para recibir datos del cliente, se especifican en la url que capta el middleware: 
+
+```python
+    path('hello/<str:username>', views.hello)
+```
+
+Posteriormente podemos trabajar con este parámetro desde la view: 
+
+```python
+def hello(request, username):
+  print(username)
+  return HttpResponse(f"Hello, {username}!")
+```
 
