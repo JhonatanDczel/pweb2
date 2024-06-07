@@ -199,3 +199,92 @@ def hello(request, username):
   return HttpResponse(f"Hello, {username}!")
 ```
 
+## Django Admin
+
+Es un recurso muy valioso de Django que se accede mediante `admin/`, para crear un super usuario lo puedes hacer de la siguiente manera: 
+
+```python
+python manage.py createsuperuser
+```
+
+Luego desde `myapp` > `admin.py` exportamos los modelos que queremos usar: 
+
+```python
+from django.contrib import admin
+from .models import Project, Task
+
+# Register your models here.
+admin.site.register(Project)
+admin.site.register(Task)
+```
+
+Para hacer que los nombres de los datos de las tablas se muestren, debemos sobreescribir la funcion `__str__` que python pone por defecto para parsear un objeto a String: 
+
+Para Project:
+```python
+  def __str__(self):
+    return self.name
+```
+
+Para Task:
+```python
+  def __str__(self):
+    return self.title + " - " + self.project.name
+```
+
+## Render
+
+Forma parte del modulo shortcuts, y nos sirve para renderizar un fragmento de html como respuesta: 
+
+```python
+def index(request):
+  return render(request, 'index.html')
+```
+
+Esto buscará en la carpeta `templates`.
+
+## Jinja Templates
+
+Se pueden pasar parametros a los templates asi: 
+
+```python
+def index(request):
+  title = "Welcome to Django Project!"
+  return render(request, 'index.html', {'title': title})
+```
+
+Y en el template se usan de la siguiente manera: 
+
+```python
+<h1>{{ title }}</h1>
+```
+
+### Bucles for
+
+Se pueden hacer bucles for usando los `{% for x in y %}` y `{% endfor %}`
+
+### Condicionales
+
+Los condicionales de hacen de la siguiente manera: 
+
+```jinja
+    <h1>{% if task.done == False %}⏳{% else %}✅{% endif %}{{task.title}}</h1>
+```
+
+Para mejores referencias visitar la documentación de Jinja
+
+### Template inheritance
+
+Para hacer herencia de templates usamos la palabra reservada `extends`:
+
+```python
+{% extends 'base.html' %}
+```
+
+Y podemos inyectar fragmentos de html con: 
+
+```html
+{% block content %}
+<p>Algun contenido</p>
+{% endblock content %}
+```
