@@ -103,3 +103,86 @@ El archivo `tests.py` es para hacer pruebas de lógica en nuestro sitio.
 ## Hola mundo en Django
 
 Lo haremos en el archivo `views.py` de `/myapp`
+
+Dentro escribimos la funcion: 
+```python
+def hello(request):
+  return HttpResponse("Hello, Django!")
+```
+
+Que devolvera el mensaje que se imprimira en pantalla, usando `urls.py`:
+
+```python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', hello)
+]
+```
+
+## Include Django
+
+Para que las aplicaciones manejen sus propias url en lugar de ponerlas todas en `urls.py` crearemos este archivo pero de forma local dentro de `/myapp`.
+
+Ahí agregamos nuestras url: 
+
+```python
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.hello)
+]
+```
+
+Y desde el archivo principal `urls.py` importamos estas url con la función `include`:
+
+```python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('myapp.urls'))
+]
+```
+
+## Trabajando con bases de datos
+
+### Data Models
+
+Para hacer las migraciones: 
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+Los modelos son codigo de python que se transforma en tablas de sql.
+
+Cada modelo representa una tabla, y sus atributos son campos de la tabla
+
+### Django shell
+
+Para ejecutar una shell interactiva en nuestro proyecto con Django: 
+
+```
+python manage.py shell
+```
+
+Dentro podemos interacgtuar con nuestra base de datos de la siguiente manera: 
+
+```
+>> p = Project(name="Aplication movil")
+```
+
+Eso crea una instancia que se agregará a la tabla Project usando: `p.save()`
+
+Project (o cualquier modelo) tiene atributos y funciones estáticas para poder trabajar con nuestra base de datos: 
+
+```
+Project.objects.all()
+# Te muestra todos los datos de la tabla Project
+```
+
+Tenemos a nuestra disposicion funciones utiles como `get(id=3)` o `filter(name="something")`
+
+Esto devolverá el dato contenido en la tabla correspondiente
+
+## Params
+
+
