@@ -362,3 +362,12 @@ Luego, en los html templates podemos usar el siguiente tag:
 
 ## Static Files
 
+Los archivos estaticos son las imagenes, css y scripts que no necesitan ser procesados por el servidor, estos se cargan dentro de la carpeta `static` que puede ser modificada desde `settings.py`.
+
+Para usarlos se tienen los siguientes tag templates: 
+
+```html
+{% load static %}
+<img src="{% static 'images/profile.jpg' %}" alt="Django logo" width="80" />
+```
+Es necesario poner la etiqueta de `load static` ya que sin eso las imagenes no se cargan
