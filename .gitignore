@@ -2,9 +2,7 @@
 *.log
 *.out
 *.gz
-.DS_Store
 __pycache__
-*_env
 *.sqlite3
 
 node_modules
